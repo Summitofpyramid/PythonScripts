@@ -1,0 +1,47 @@
+{
+  "name": "@loopback/http-server",
+  "version": "2.1.5",
+  "description": "A wrapper for creating HTTP/HTTPS servers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "clean": "lb-clean loopback-http-server*.tgz dist *.tsbuildinfo package",
+    "pretest": "npm run build",
+    "test": "lb-mocha \"dist/__tests__/**/*.js\"",
+    "verify": "npm pack && tar xf loopback-http-server*.tgz && tree package && npm run clean"
+  },
+  "author": "IBM Corp.",
+  "copyright.owner": "IBM Corp.",
+  "license": "MIT",
+  "dependencies": {
+    "stoppable": "^1.1.0",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^5.4.1",
+    "@loopback/core": "^2.7.0",
+    "@loopback/eslint-config": "^7.0.1",
+    "@loopback/testlab": "^3.1.5",
+    "@types/node": "^10.17.24",
+    "@types/stoppable": "^1.1.0"
+  },
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strongloop/loopback-next.git",
+    "directory": "packages/http-server"
+  },
+  "gitHead": "62aea854bf85c5a5995b59e6908fe5409f7eea96"
+}
